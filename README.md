@@ -1,4 +1,4 @@
-# OpenGL and Vulkan loader generator
+# OpenGL and Vulkan loader generator 
 OpenGL and Vulkan loader for C++ using Python  
 See sample_project for usage.  
 Can be used with both C and C++  
