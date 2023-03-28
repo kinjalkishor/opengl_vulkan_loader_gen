@@ -7,10 +7,9 @@
 
 
 typedef void (*PFN_apiproc)(void);
-typedef PFN_apiproc (*PFN_loadfunc)(const char *name);
-void* get_gl_func_address_name(const char* name);
+typedef PFN_apiproc (*PFN_loadfunc_gl)(const char *name);
 
-
+//#define GL_LOADER_COMPAT_PRINT_ERRORS
 
 // GL_VERSION_1_0
 typedef void (APIENTRYP PFNGLACCUMPROC) (GLenum op, GLfloat value);
@@ -2837,4 +2836,4 @@ extern PFNGLPOLYGONOFFSETCLAMPPROC glPolygonOffsetClamp;
 
 
 // Loader Function
-void glfnlib_load_gl(PFN_loadfunc load);
+void glfnlib_load(PFN_loadfunc_gl load);

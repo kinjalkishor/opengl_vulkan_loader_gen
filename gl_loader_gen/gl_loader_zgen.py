@@ -13,10 +13,15 @@ fo_gl_compat_h = open(path + "/gl_loader_compat.h","w")
 fo_gl_compat_cpp = open(path + "/gl_loader_compat.cpp","w")
 
 with_glfn_func_name = False
-gl_loader_func = "get_gl_func_address_name"
+gl_loader_func = "load"
 
 
 def printheader_in_h(profile_type):
+    if (profile_type == "glcore"):
+        profile_name = "core"
+    elif (profile_type == "glcompat"):
+        profile_name = "compat"
+
     print("#pragma once\n")
     if (profile_type == "glcore"):
         print("#include <glcorearb.h>\n")
@@ -26,9 +31,8 @@ def printheader_in_h(profile_type):
         print("#include <gl/gl.h>")
         print("#include <glext.h>\n\n")
     print("typedef void (*PFN_apiproc)(void);")
-    print("typedef PFN_apiproc (*PFN_loadfunc)(const char *name);")
-    print("void* get_gl_func_address_name(const char* name);")
-    print("\n")
+    print("typedef PFN_apiproc (*PFN_loadfunc_gl)(const char *name);")
+    print("\n//#define GL_LOADER_" + profile_name.upper() + "_PRINT_ERRORS")
 # }
 
 def printheader_in_cpp(profile_type):
@@ -37,10 +41,13 @@ def printheader_in_cpp(profile_type):
     elif (profile_type == "glcompat"):
         profile_name = "compat"
     print("#include " + '"' + "gl_loader_" + profile_name + ".h" + '"')
-    print()
-    print("#include " + '"../base_print.h"')
-    print("#define print_msg printfln")
-    print("\n//#define print_msg\n\n")
+    print("\n#include <stdio.h>")
+    print("#if defined GL_LOADER_" + profile_name.upper() + "_PRINT_ERRORS")
+    print('#define print_msg(format, ...)		printf(format ' + '"\\n"' + ', __VA_ARGS__)')
+    print("#else")
+    print("#define print_msg")
+    print("#endif")    
+    print("\n")     
 # }
     
 
@@ -126,14 +133,15 @@ def process_gl_1_1_msvc(fout_h, fout_cpp):
         print(i)    
 
     print("\n")
-    print("void glfnlib_init_GL_VERSION_1_0(PFN_loadfunc load) {")
+    print("void glfnlib_init_GL_VERSION_1_0(PFN_loadfunc_gl load) {")
     for i in gl1_init_func_versions_list_cpp:
         #if (not with_glfn_func_name):
             #i = i.replace("glfn_", "")
         print(i, end='')
     print("}\n\n")
+    
+    
     sys.stdout = fout_h
-
     gl1_func_define_list_cpp.clear()
     gl1_init_func_versions_list_cpp.clear()
 
@@ -215,7 +223,7 @@ def process_gl_ext(fin_h, fout_h, fout_cpp, profile_type):
             else:
                 gl_core_init_func_versions_list_cpp.append("}\n\n")
 
-            gl_core_init_func_versions_list_cpp.append("\nvoid glfnlib_init_" + version_name + "(PFN_loadfunc load) {\n")
+            gl_core_init_func_versions_list_cpp.append("\nvoid glfnlib_init_" + version_name + "(PFN_loadfunc_gl load) {\n")
             gl_core_init_func_list_cpp.append("glfnlib_init_" + version_name + "(load);")     
             gl_core_func_define_list_cpp.append(version_line)
             #sys.stdout = fout_h
@@ -267,8 +275,11 @@ def process_gl_ext(fin_h, fout_h, fout_cpp, profile_type):
             gl_core_init_func_versions_list_cpp.append("\n")
             # sys.stdout = fout_h
 
+
+    loader_init_func_name = "glfnlib_load"
+    
     print("\n\n// Loader Function")
-    print("void glfnlib_load_gl(PFN_loadfunc load);")
+    print("void " + loader_init_func_name + "(PFN_loadfunc_gl load);")
 
     sys.stdout = fout_cpp
     for i in gl_core_func_define_list_cpp:
@@ -283,7 +294,7 @@ def process_gl_ext(fin_h, fout_h, fout_cpp, profile_type):
         print(i, end='')
     print("}")
     
-    print("\n\nvoid glfnlib_load_gl(PFN_loadfunc load) {")
+    print("\n\nvoid " + loader_init_func_name + "(PFN_loadfunc_gl load) {")
     if (profile_type == "glcompat"):
         print("\tglfnlib_init_GL_VERSION_1_0(load);")
     for i in gl_core_init_func_list_cpp:
