@@ -2,7 +2,7 @@
 OpenGL and Vulkan loader for C++ using Python  
 See sample_project for usage.  
 Can be used with both C and C++  
-Shows function signature in tooltip window when hovered over function pointer or macro name as function prototype is above function pointer declaration as comment in generated header.  
+Shows function signature in tooltip window when hovered over function pointer or macro name, since function prototype is above function pointer declaration as comment in generated header.  
   
 For OpenGL -  
 Generates loaders for both core & compatibility profiles, but only one can be used a t atime due to same function pointer names.  
