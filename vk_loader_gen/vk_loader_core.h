@@ -1862,6 +1862,34 @@ extern PFN_vkGetDeviceImageMemoryRequirementsKHR vkGetDeviceImageMemoryRequireme
 //     uint32_t*                                   pSparseMemoryRequirementCount,
 //     VkSparseImageMemoryRequirements2*           pSparseMemoryRequirements);
 extern PFN_vkGetDeviceImageSparseMemoryRequirementsKHR vkGetDeviceImageSparseMemoryRequirementsKHR;
+// VKAPI_ATTR void VKAPI_CALL vkCmdBindIndexBuffer2KHR(
+//     VkCommandBuffer                             commandBuffer,
+//     VkBuffer                                    buffer,
+//     VkDeviceSize                                offset,
+//     VkDeviceSize                                size,
+//     VkIndexType                                 indexType);
+extern PFN_vkCmdBindIndexBuffer2KHR vkCmdBindIndexBuffer2KHR;
+// VKAPI_ATTR void VKAPI_CALL vkGetRenderingAreaGranularityKHR(
+//     VkDevice                                    device,
+//     const VkRenderingAreaInfoKHR*               pRenderingAreaInfo,
+//     VkExtent2D*                                 pGranularity);
+extern PFN_vkGetRenderingAreaGranularityKHR vkGetRenderingAreaGranularityKHR;
+// VKAPI_ATTR void VKAPI_CALL vkGetDeviceImageSubresourceLayoutKHR(
+//     VkDevice                                    device,
+//     const VkDeviceImageSubresourceInfoKHR*      pInfo,
+//     VkSubresourceLayout2KHR*                    pLayout);
+extern PFN_vkGetDeviceImageSubresourceLayoutKHR vkGetDeviceImageSubresourceLayoutKHR;
+// VKAPI_ATTR void VKAPI_CALL vkGetImageSubresourceLayout2KHR(
+//     VkDevice                                    device,
+//     VkImage                                     image,
+//     const VkImageSubresource2KHR*               pSubresource,
+//     VkSubresourceLayout2KHR*                    pLayout);
+extern PFN_vkGetImageSubresourceLayout2KHR vkGetImageSubresourceLayout2KHR;
+// VKAPI_ATTR VkResult VKAPI_CALL vkGetPhysicalDeviceCooperativeMatrixPropertiesKHR(
+//     VkPhysicalDevice                            physicalDevice,
+//     uint32_t*                                   pPropertyCount,
+//     VkCooperativeMatrixPropertiesKHR*           pProperties);
+extern PFN_vkGetPhysicalDeviceCooperativeMatrixPropertiesKHR vkGetPhysicalDeviceCooperativeMatrixPropertiesKHR;
 // VKAPI_ATTR VkResult VKAPI_CALL vkCreateDebugReportCallbackEXT(
 //     VkInstance                                  instance,
 //     const VkDebugReportCallbackCreateInfoEXT*   pCreateInfo,
@@ -2497,6 +2525,29 @@ extern PFN_vkCmdSetStencilTestEnableEXT vkCmdSetStencilTestEnableEXT;
 //     VkStencilOp                                 depthFailOp,
 //     VkCompareOp                                 compareOp);
 extern PFN_vkCmdSetStencilOpEXT vkCmdSetStencilOpEXT;
+// VKAPI_ATTR VkResult VKAPI_CALL vkCopyMemoryToImageEXT(
+//     VkDevice                                    device,
+//     const VkCopyMemoryToImageInfoEXT*           pCopyMemoryToImageInfo);
+extern PFN_vkCopyMemoryToImageEXT vkCopyMemoryToImageEXT;
+// VKAPI_ATTR VkResult VKAPI_CALL vkCopyImageToMemoryEXT(
+//     VkDevice                                    device,
+//     const VkCopyImageToMemoryInfoEXT*           pCopyImageToMemoryInfo);
+extern PFN_vkCopyImageToMemoryEXT vkCopyImageToMemoryEXT;
+// VKAPI_ATTR VkResult VKAPI_CALL vkCopyImageToImageEXT(
+//     VkDevice                                    device,
+//     const VkCopyImageToImageInfoEXT*            pCopyImageToImageInfo);
+extern PFN_vkCopyImageToImageEXT vkCopyImageToImageEXT;
+// VKAPI_ATTR VkResult VKAPI_CALL vkTransitionImageLayoutEXT(
+//     VkDevice                                    device,
+//     uint32_t                                    transitionCount,
+//     const VkHostImageLayoutTransitionInfoEXT*   pTransitions);
+extern PFN_vkTransitionImageLayoutEXT vkTransitionImageLayoutEXT;
+// VKAPI_ATTR void VKAPI_CALL vkGetImageSubresourceLayout2EXT(
+//     VkDevice                                    device,
+//     VkImage                                     image,
+//     const VkImageSubresource2KHR*               pSubresource,
+//     VkSubresourceLayout2KHR*                    pLayout);
+extern PFN_vkGetImageSubresourceLayout2EXT vkGetImageSubresourceLayout2EXT;
 // VKAPI_ATTR VkResult VKAPI_CALL vkReleaseSwapchainImagesEXT(
 //     VkDevice                                    device,
 //     const VkReleaseSwapchainImagesInfoEXT*      pReleaseInfo);
@@ -2532,6 +2583,10 @@ extern PFN_vkCreateIndirectCommandsLayoutNV vkCreateIndirectCommandsLayoutNV;
 //     VkIndirectCommandsLayoutNV                  indirectCommandsLayout,
 //     const VkAllocationCallbacks*                pAllocator);
 extern PFN_vkDestroyIndirectCommandsLayoutNV vkDestroyIndirectCommandsLayoutNV;
+// VKAPI_ATTR void VKAPI_CALL vkCmdSetDepthBias2EXT(
+//     VkCommandBuffer                             commandBuffer,
+//     const VkDepthBiasInfoEXT*                   pDepthBiasInfo);
+extern PFN_vkCmdSetDepthBias2EXT vkCmdSetDepthBias2EXT;
 // VKAPI_ATTR VkResult VKAPI_CALL vkAcquireDrmDisplayEXT(
 //     VkPhysicalDevice                            physicalDevice,
 //     int32_t                                     drmFd,
@@ -2635,12 +2690,6 @@ extern PFN_vkGetAccelerationStructureOpaqueCaptureDescriptorDataEXT vkGetAcceler
 //     VkFragmentShadingRateNV                     shadingRate,
 //     const VkFragmentShadingRateCombinerOpKHR    combinerOps[2]);
 extern PFN_vkCmdSetFragmentShadingRateEnumNV vkCmdSetFragmentShadingRateEnumNV;
-// VKAPI_ATTR void VKAPI_CALL vkGetImageSubresourceLayout2EXT(
-//     VkDevice                                    device,
-//     VkImage                                     image,
-//     const VkImageSubresource2EXT*               pSubresource,
-//     VkSubresourceLayout2EXT*                    pLayout);
-extern PFN_vkGetImageSubresourceLayout2EXT vkGetImageSubresourceLayout2EXT;
 // VKAPI_ATTR VkResult VKAPI_CALL vkGetDeviceFaultInfoEXT(
 //     VkDevice                                    device,
 //     VkDeviceFaultCountsEXT*                     pFaultCounts,
@@ -2847,6 +2896,20 @@ extern PFN_vkCmdDecompressMemoryNV vkCmdDecompressMemoryNV;
 //     VkDeviceAddress                             indirectCommandsCountAddress,
 //     uint32_t                                    stride);
 extern PFN_vkCmdDecompressMemoryIndirectCountNV vkCmdDecompressMemoryIndirectCountNV;
+// VKAPI_ATTR void VKAPI_CALL vkGetPipelineIndirectMemoryRequirementsNV(
+//     VkDevice                                    device,
+//     const VkComputePipelineCreateInfo*          pCreateInfo,
+//     VkMemoryRequirements2*                      pMemoryRequirements);
+extern PFN_vkGetPipelineIndirectMemoryRequirementsNV vkGetPipelineIndirectMemoryRequirementsNV;
+// VKAPI_ATTR void VKAPI_CALL vkCmdUpdatePipelineIndirectBufferNV(
+//     VkCommandBuffer                             commandBuffer,
+//     VkPipelineBindPoint                         pipelineBindPoint,
+//     VkPipeline                                  pipeline);
+extern PFN_vkCmdUpdatePipelineIndirectBufferNV vkCmdUpdatePipelineIndirectBufferNV;
+// VKAPI_ATTR VkDeviceAddress VKAPI_CALL vkGetPipelineIndirectDeviceAddressNV(
+//     VkDevice                                    device,
+//     const VkPipelineIndirectDeviceAddressInfoNV* pInfo);
+extern PFN_vkGetPipelineIndirectDeviceAddressNV vkGetPipelineIndirectDeviceAddressNV;
 // VKAPI_ATTR void VKAPI_CALL vkCmdSetTessellationDomainOriginEXT(
 //     VkCommandBuffer                             commandBuffer,
 //     VkTessellationDomainOrigin                  domainOrigin);
@@ -3022,6 +3085,30 @@ extern PFN_vkBindOpticalFlowSessionImageNV vkBindOpticalFlowSessionImageNV;
 //     VkOpticalFlowSessionNV                      session,
 //     const VkOpticalFlowExecuteInfoNV*           pExecuteInfo);
 extern PFN_vkCmdOpticalFlowExecuteNV vkCmdOpticalFlowExecuteNV;
+// VKAPI_ATTR VkResult VKAPI_CALL vkCreateShadersEXT(
+//     VkDevice                                    device,
+//     uint32_t                                    createInfoCount,
+//     const VkShaderCreateInfoEXT*                pCreateInfos,
+//     const VkAllocationCallbacks*                pAllocator,
+//     VkShaderEXT*                                pShaders);
+extern PFN_vkCreateShadersEXT vkCreateShadersEXT;
+// VKAPI_ATTR void VKAPI_CALL vkDestroyShaderEXT(
+//     VkDevice                                    device,
+//     VkShaderEXT                                 shader,
+//     const VkAllocationCallbacks*                pAllocator);
+extern PFN_vkDestroyShaderEXT vkDestroyShaderEXT;
+// VKAPI_ATTR VkResult VKAPI_CALL vkGetShaderBinaryDataEXT(
+//     VkDevice                                    device,
+//     VkShaderEXT                                 shader,
+//     size_t*                                     pDataSize,
+//     void*                                       pData);
+extern PFN_vkGetShaderBinaryDataEXT vkGetShaderBinaryDataEXT;
+// VKAPI_ATTR void VKAPI_CALL vkCmdBindShadersEXT(
+//     VkCommandBuffer                             commandBuffer,
+//     uint32_t                                    stageCount,
+//     const VkShaderStageFlagBits*                pStages,
+//     const VkShaderEXT*                          pShaders);
+extern PFN_vkCmdBindShadersEXT vkCmdBindShadersEXT;
 // VKAPI_ATTR VkResult VKAPI_CALL vkGetFramebufferTilePropertiesQCOM(
 //     VkDevice                                    device,
 //     VkFramebuffer                               framebuffer,
@@ -3033,6 +3120,10 @@ extern PFN_vkGetFramebufferTilePropertiesQCOM vkGetFramebufferTilePropertiesQCOM
 //     const VkRenderingInfo*                      pRenderingInfo,
 //     VkTilePropertiesQCOM*                       pProperties);
 extern PFN_vkGetDynamicRenderingTilePropertiesQCOM vkGetDynamicRenderingTilePropertiesQCOM;
+// VKAPI_ATTR void VKAPI_CALL vkCmdSetAttachmentFeedbackLoopEnableEXT(
+//     VkCommandBuffer                             commandBuffer,
+//     VkImageAspectFlags                          aspectMask);
+extern PFN_vkCmdSetAttachmentFeedbackLoopEnableEXT vkCmdSetAttachmentFeedbackLoopEnableEXT;
 // VKAPI_ATTR VkResult VKAPI_CALL vkCreateAccelerationStructureKHR(
 //     VkDevice                                    device,
 //     const VkAccelerationStructureCreateInfoKHR* pCreateInfo,

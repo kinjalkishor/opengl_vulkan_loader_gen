@@ -352,6 +352,11 @@ PFN_vkCmdTraceRaysIndirect2KHR vkCmdTraceRaysIndirect2KHR = nullptr;
 PFN_vkGetDeviceBufferMemoryRequirementsKHR vkGetDeviceBufferMemoryRequirementsKHR = nullptr;
 PFN_vkGetDeviceImageMemoryRequirementsKHR vkGetDeviceImageMemoryRequirementsKHR = nullptr;
 PFN_vkGetDeviceImageSparseMemoryRequirementsKHR vkGetDeviceImageSparseMemoryRequirementsKHR = nullptr;
+PFN_vkCmdBindIndexBuffer2KHR vkCmdBindIndexBuffer2KHR = nullptr;
+PFN_vkGetRenderingAreaGranularityKHR vkGetRenderingAreaGranularityKHR = nullptr;
+PFN_vkGetDeviceImageSubresourceLayoutKHR vkGetDeviceImageSubresourceLayoutKHR = nullptr;
+PFN_vkGetImageSubresourceLayout2KHR vkGetImageSubresourceLayout2KHR = nullptr;
+PFN_vkGetPhysicalDeviceCooperativeMatrixPropertiesKHR vkGetPhysicalDeviceCooperativeMatrixPropertiesKHR = nullptr;
 PFN_vkCreateDebugReportCallbackEXT vkCreateDebugReportCallbackEXT = nullptr;
 PFN_vkDestroyDebugReportCallbackEXT vkDestroyDebugReportCallbackEXT = nullptr;
 PFN_vkDebugReportMessageEXT vkDebugReportMessageEXT = nullptr;
@@ -466,6 +471,11 @@ PFN_vkCmdSetDepthCompareOpEXT vkCmdSetDepthCompareOpEXT = nullptr;
 PFN_vkCmdSetDepthBoundsTestEnableEXT vkCmdSetDepthBoundsTestEnableEXT = nullptr;
 PFN_vkCmdSetStencilTestEnableEXT vkCmdSetStencilTestEnableEXT = nullptr;
 PFN_vkCmdSetStencilOpEXT vkCmdSetStencilOpEXT = nullptr;
+PFN_vkCopyMemoryToImageEXT vkCopyMemoryToImageEXT = nullptr;
+PFN_vkCopyImageToMemoryEXT vkCopyImageToMemoryEXT = nullptr;
+PFN_vkCopyImageToImageEXT vkCopyImageToImageEXT = nullptr;
+PFN_vkTransitionImageLayoutEXT vkTransitionImageLayoutEXT = nullptr;
+PFN_vkGetImageSubresourceLayout2EXT vkGetImageSubresourceLayout2EXT = nullptr;
 PFN_vkReleaseSwapchainImagesEXT vkReleaseSwapchainImagesEXT = nullptr;
 PFN_vkGetGeneratedCommandsMemoryRequirementsNV vkGetGeneratedCommandsMemoryRequirementsNV = nullptr;
 PFN_vkCmdPreprocessGeneratedCommandsNV vkCmdPreprocessGeneratedCommandsNV = nullptr;
@@ -473,6 +483,7 @@ PFN_vkCmdExecuteGeneratedCommandsNV vkCmdExecuteGeneratedCommandsNV = nullptr;
 PFN_vkCmdBindPipelineShaderGroupNV vkCmdBindPipelineShaderGroupNV = nullptr;
 PFN_vkCreateIndirectCommandsLayoutNV vkCreateIndirectCommandsLayoutNV = nullptr;
 PFN_vkDestroyIndirectCommandsLayoutNV vkDestroyIndirectCommandsLayoutNV = nullptr;
+PFN_vkCmdSetDepthBias2EXT vkCmdSetDepthBias2EXT = nullptr;
 PFN_vkAcquireDrmDisplayEXT vkAcquireDrmDisplayEXT = nullptr;
 PFN_vkGetDrmDisplayEXT vkGetDrmDisplayEXT = nullptr;
 PFN_vkCreatePrivateDataSlotEXT vkCreatePrivateDataSlotEXT = nullptr;
@@ -491,7 +502,6 @@ PFN_vkGetImageViewOpaqueCaptureDescriptorDataEXT vkGetImageViewOpaqueCaptureDesc
 PFN_vkGetSamplerOpaqueCaptureDescriptorDataEXT vkGetSamplerOpaqueCaptureDescriptorDataEXT = nullptr;
 PFN_vkGetAccelerationStructureOpaqueCaptureDescriptorDataEXT vkGetAccelerationStructureOpaqueCaptureDescriptorDataEXT = nullptr;
 PFN_vkCmdSetFragmentShadingRateEnumNV vkCmdSetFragmentShadingRateEnumNV = nullptr;
-PFN_vkGetImageSubresourceLayout2EXT vkGetImageSubresourceLayout2EXT = nullptr;
 PFN_vkGetDeviceFaultInfoEXT vkGetDeviceFaultInfoEXT = nullptr;
 PFN_vkCmdSetVertexInputEXT vkCmdSetVertexInputEXT = nullptr;
 PFN_vkGetDeviceSubpassShadingMaxWorkgroupSizeHUAWEI vkGetDeviceSubpassShadingMaxWorkgroupSizeHUAWEI = nullptr;
@@ -530,6 +540,9 @@ PFN_vkCmdCopyMemoryIndirectNV vkCmdCopyMemoryIndirectNV = nullptr;
 PFN_vkCmdCopyMemoryToImageIndirectNV vkCmdCopyMemoryToImageIndirectNV = nullptr;
 PFN_vkCmdDecompressMemoryNV vkCmdDecompressMemoryNV = nullptr;
 PFN_vkCmdDecompressMemoryIndirectCountNV vkCmdDecompressMemoryIndirectCountNV = nullptr;
+PFN_vkGetPipelineIndirectMemoryRequirementsNV vkGetPipelineIndirectMemoryRequirementsNV = nullptr;
+PFN_vkCmdUpdatePipelineIndirectBufferNV vkCmdUpdatePipelineIndirectBufferNV = nullptr;
+PFN_vkGetPipelineIndirectDeviceAddressNV vkGetPipelineIndirectDeviceAddressNV = nullptr;
 PFN_vkCmdSetTessellationDomainOriginEXT vkCmdSetTessellationDomainOriginEXT = nullptr;
 PFN_vkCmdSetDepthClampEnableEXT vkCmdSetDepthClampEnableEXT = nullptr;
 PFN_vkCmdSetPolygonModeEXT vkCmdSetPolygonModeEXT = nullptr;
@@ -568,8 +581,13 @@ PFN_vkCreateOpticalFlowSessionNV vkCreateOpticalFlowSessionNV = nullptr;
 PFN_vkDestroyOpticalFlowSessionNV vkDestroyOpticalFlowSessionNV = nullptr;
 PFN_vkBindOpticalFlowSessionImageNV vkBindOpticalFlowSessionImageNV = nullptr;
 PFN_vkCmdOpticalFlowExecuteNV vkCmdOpticalFlowExecuteNV = nullptr;
+PFN_vkCreateShadersEXT vkCreateShadersEXT = nullptr;
+PFN_vkDestroyShaderEXT vkDestroyShaderEXT = nullptr;
+PFN_vkGetShaderBinaryDataEXT vkGetShaderBinaryDataEXT = nullptr;
+PFN_vkCmdBindShadersEXT vkCmdBindShadersEXT = nullptr;
 PFN_vkGetFramebufferTilePropertiesQCOM vkGetFramebufferTilePropertiesQCOM = nullptr;
 PFN_vkGetDynamicRenderingTilePropertiesQCOM vkGetDynamicRenderingTilePropertiesQCOM = nullptr;
+PFN_vkCmdSetAttachmentFeedbackLoopEnableEXT vkCmdSetAttachmentFeedbackLoopEnableEXT = nullptr;
 PFN_vkCreateAccelerationStructureKHR vkCreateAccelerationStructureKHR = nullptr;
 PFN_vkDestroyAccelerationStructureKHR vkDestroyAccelerationStructureKHR = nullptr;
 PFN_vkCmdBuildAccelerationStructuresKHR vkCmdBuildAccelerationStructuresKHR = nullptr;
@@ -1290,6 +1308,16 @@ void vkfnlib_init_VK_VERSION_1_3(PFN_loadfunc_vk load, VkInstance vk_instance) {
 	if (!vkGetDeviceImageMemoryRequirementsKHR) { print_msg("vkGetDeviceImageMemoryRequirementsKHR not loaded"); }
 	vkGetDeviceImageSparseMemoryRequirementsKHR = (PFN_vkGetDeviceImageSparseMemoryRequirementsKHR)load(vk_instance, "vkGetDeviceImageSparseMemoryRequirementsKHR");
 	if (!vkGetDeviceImageSparseMemoryRequirementsKHR) { print_msg("vkGetDeviceImageSparseMemoryRequirementsKHR not loaded"); }
+	vkCmdBindIndexBuffer2KHR = (PFN_vkCmdBindIndexBuffer2KHR)load(vk_instance, "vkCmdBindIndexBuffer2KHR");
+	if (!vkCmdBindIndexBuffer2KHR) { print_msg("vkCmdBindIndexBuffer2KHR not loaded"); }
+	vkGetRenderingAreaGranularityKHR = (PFN_vkGetRenderingAreaGranularityKHR)load(vk_instance, "vkGetRenderingAreaGranularityKHR");
+	if (!vkGetRenderingAreaGranularityKHR) { print_msg("vkGetRenderingAreaGranularityKHR not loaded"); }
+	vkGetDeviceImageSubresourceLayoutKHR = (PFN_vkGetDeviceImageSubresourceLayoutKHR)load(vk_instance, "vkGetDeviceImageSubresourceLayoutKHR");
+	if (!vkGetDeviceImageSubresourceLayoutKHR) { print_msg("vkGetDeviceImageSubresourceLayoutKHR not loaded"); }
+	vkGetImageSubresourceLayout2KHR = (PFN_vkGetImageSubresourceLayout2KHR)load(vk_instance, "vkGetImageSubresourceLayout2KHR");
+	if (!vkGetImageSubresourceLayout2KHR) { print_msg("vkGetImageSubresourceLayout2KHR not loaded"); }
+	vkGetPhysicalDeviceCooperativeMatrixPropertiesKHR = (PFN_vkGetPhysicalDeviceCooperativeMatrixPropertiesKHR)load(vk_instance, "vkGetPhysicalDeviceCooperativeMatrixPropertiesKHR");
+	if (!vkGetPhysicalDeviceCooperativeMatrixPropertiesKHR) { print_msg("vkGetPhysicalDeviceCooperativeMatrixPropertiesKHR not loaded"); }
 	vkCreateDebugReportCallbackEXT = (PFN_vkCreateDebugReportCallbackEXT)load(vk_instance, "vkCreateDebugReportCallbackEXT");
 	if (!vkCreateDebugReportCallbackEXT) { print_msg("vkCreateDebugReportCallbackEXT not loaded"); }
 	vkDestroyDebugReportCallbackEXT = (PFN_vkDestroyDebugReportCallbackEXT)load(vk_instance, "vkDestroyDebugReportCallbackEXT");
@@ -1518,6 +1546,16 @@ void vkfnlib_init_VK_VERSION_1_3(PFN_loadfunc_vk load, VkInstance vk_instance) {
 	if (!vkCmdSetStencilTestEnableEXT) { print_msg("vkCmdSetStencilTestEnableEXT not loaded"); }
 	vkCmdSetStencilOpEXT = (PFN_vkCmdSetStencilOpEXT)load(vk_instance, "vkCmdSetStencilOpEXT");
 	if (!vkCmdSetStencilOpEXT) { print_msg("vkCmdSetStencilOpEXT not loaded"); }
+	vkCopyMemoryToImageEXT = (PFN_vkCopyMemoryToImageEXT)load(vk_instance, "vkCopyMemoryToImageEXT");
+	if (!vkCopyMemoryToImageEXT) { print_msg("vkCopyMemoryToImageEXT not loaded"); }
+	vkCopyImageToMemoryEXT = (PFN_vkCopyImageToMemoryEXT)load(vk_instance, "vkCopyImageToMemoryEXT");
+	if (!vkCopyImageToMemoryEXT) { print_msg("vkCopyImageToMemoryEXT not loaded"); }
+	vkCopyImageToImageEXT = (PFN_vkCopyImageToImageEXT)load(vk_instance, "vkCopyImageToImageEXT");
+	if (!vkCopyImageToImageEXT) { print_msg("vkCopyImageToImageEXT not loaded"); }
+	vkTransitionImageLayoutEXT = (PFN_vkTransitionImageLayoutEXT)load(vk_instance, "vkTransitionImageLayoutEXT");
+	if (!vkTransitionImageLayoutEXT) { print_msg("vkTransitionImageLayoutEXT not loaded"); }
+	vkGetImageSubresourceLayout2EXT = (PFN_vkGetImageSubresourceLayout2EXT)load(vk_instance, "vkGetImageSubresourceLayout2EXT");
+	if (!vkGetImageSubresourceLayout2EXT) { print_msg("vkGetImageSubresourceLayout2EXT not loaded"); }
 	vkReleaseSwapchainImagesEXT = (PFN_vkReleaseSwapchainImagesEXT)load(vk_instance, "vkReleaseSwapchainImagesEXT");
 	if (!vkReleaseSwapchainImagesEXT) { print_msg("vkReleaseSwapchainImagesEXT not loaded"); }
 	vkGetGeneratedCommandsMemoryRequirementsNV = (PFN_vkGetGeneratedCommandsMemoryRequirementsNV)load(vk_instance, "vkGetGeneratedCommandsMemoryRequirementsNV");
@@ -1532,6 +1570,8 @@ void vkfnlib_init_VK_VERSION_1_3(PFN_loadfunc_vk load, VkInstance vk_instance) {
 	if (!vkCreateIndirectCommandsLayoutNV) { print_msg("vkCreateIndirectCommandsLayoutNV not loaded"); }
 	vkDestroyIndirectCommandsLayoutNV = (PFN_vkDestroyIndirectCommandsLayoutNV)load(vk_instance, "vkDestroyIndirectCommandsLayoutNV");
 	if (!vkDestroyIndirectCommandsLayoutNV) { print_msg("vkDestroyIndirectCommandsLayoutNV not loaded"); }
+	vkCmdSetDepthBias2EXT = (PFN_vkCmdSetDepthBias2EXT)load(vk_instance, "vkCmdSetDepthBias2EXT");
+	if (!vkCmdSetDepthBias2EXT) { print_msg("vkCmdSetDepthBias2EXT not loaded"); }
 	vkAcquireDrmDisplayEXT = (PFN_vkAcquireDrmDisplayEXT)load(vk_instance, "vkAcquireDrmDisplayEXT");
 	if (!vkAcquireDrmDisplayEXT) { print_msg("vkAcquireDrmDisplayEXT not loaded"); }
 	vkGetDrmDisplayEXT = (PFN_vkGetDrmDisplayEXT)load(vk_instance, "vkGetDrmDisplayEXT");
@@ -1568,8 +1608,6 @@ void vkfnlib_init_VK_VERSION_1_3(PFN_loadfunc_vk load, VkInstance vk_instance) {
 	if (!vkGetAccelerationStructureOpaqueCaptureDescriptorDataEXT) { print_msg("vkGetAccelerationStructureOpaqueCaptureDescriptorDataEXT not loaded"); }
 	vkCmdSetFragmentShadingRateEnumNV = (PFN_vkCmdSetFragmentShadingRateEnumNV)load(vk_instance, "vkCmdSetFragmentShadingRateEnumNV");
 	if (!vkCmdSetFragmentShadingRateEnumNV) { print_msg("vkCmdSetFragmentShadingRateEnumNV not loaded"); }
-	vkGetImageSubresourceLayout2EXT = (PFN_vkGetImageSubresourceLayout2EXT)load(vk_instance, "vkGetImageSubresourceLayout2EXT");
-	if (!vkGetImageSubresourceLayout2EXT) { print_msg("vkGetImageSubresourceLayout2EXT not loaded"); }
 	vkGetDeviceFaultInfoEXT = (PFN_vkGetDeviceFaultInfoEXT)load(vk_instance, "vkGetDeviceFaultInfoEXT");
 	if (!vkGetDeviceFaultInfoEXT) { print_msg("vkGetDeviceFaultInfoEXT not loaded"); }
 	vkCmdSetVertexInputEXT = (PFN_vkCmdSetVertexInputEXT)load(vk_instance, "vkCmdSetVertexInputEXT");
@@ -1646,6 +1684,12 @@ void vkfnlib_init_VK_VERSION_1_3(PFN_loadfunc_vk load, VkInstance vk_instance) {
 	if (!vkCmdDecompressMemoryNV) { print_msg("vkCmdDecompressMemoryNV not loaded"); }
 	vkCmdDecompressMemoryIndirectCountNV = (PFN_vkCmdDecompressMemoryIndirectCountNV)load(vk_instance, "vkCmdDecompressMemoryIndirectCountNV");
 	if (!vkCmdDecompressMemoryIndirectCountNV) { print_msg("vkCmdDecompressMemoryIndirectCountNV not loaded"); }
+	vkGetPipelineIndirectMemoryRequirementsNV = (PFN_vkGetPipelineIndirectMemoryRequirementsNV)load(vk_instance, "vkGetPipelineIndirectMemoryRequirementsNV");
+	if (!vkGetPipelineIndirectMemoryRequirementsNV) { print_msg("vkGetPipelineIndirectMemoryRequirementsNV not loaded"); }
+	vkCmdUpdatePipelineIndirectBufferNV = (PFN_vkCmdUpdatePipelineIndirectBufferNV)load(vk_instance, "vkCmdUpdatePipelineIndirectBufferNV");
+	if (!vkCmdUpdatePipelineIndirectBufferNV) { print_msg("vkCmdUpdatePipelineIndirectBufferNV not loaded"); }
+	vkGetPipelineIndirectDeviceAddressNV = (PFN_vkGetPipelineIndirectDeviceAddressNV)load(vk_instance, "vkGetPipelineIndirectDeviceAddressNV");
+	if (!vkGetPipelineIndirectDeviceAddressNV) { print_msg("vkGetPipelineIndirectDeviceAddressNV not loaded"); }
 	vkCmdSetTessellationDomainOriginEXT = (PFN_vkCmdSetTessellationDomainOriginEXT)load(vk_instance, "vkCmdSetTessellationDomainOriginEXT");
 	if (!vkCmdSetTessellationDomainOriginEXT) { print_msg("vkCmdSetTessellationDomainOriginEXT not loaded"); }
 	vkCmdSetDepthClampEnableEXT = (PFN_vkCmdSetDepthClampEnableEXT)load(vk_instance, "vkCmdSetDepthClampEnableEXT");
@@ -1722,10 +1766,20 @@ void vkfnlib_init_VK_VERSION_1_3(PFN_loadfunc_vk load, VkInstance vk_instance) {
 	if (!vkBindOpticalFlowSessionImageNV) { print_msg("vkBindOpticalFlowSessionImageNV not loaded"); }
 	vkCmdOpticalFlowExecuteNV = (PFN_vkCmdOpticalFlowExecuteNV)load(vk_instance, "vkCmdOpticalFlowExecuteNV");
 	if (!vkCmdOpticalFlowExecuteNV) { print_msg("vkCmdOpticalFlowExecuteNV not loaded"); }
+	vkCreateShadersEXT = (PFN_vkCreateShadersEXT)load(vk_instance, "vkCreateShadersEXT");
+	if (!vkCreateShadersEXT) { print_msg("vkCreateShadersEXT not loaded"); }
+	vkDestroyShaderEXT = (PFN_vkDestroyShaderEXT)load(vk_instance, "vkDestroyShaderEXT");
+	if (!vkDestroyShaderEXT) { print_msg("vkDestroyShaderEXT not loaded"); }
+	vkGetShaderBinaryDataEXT = (PFN_vkGetShaderBinaryDataEXT)load(vk_instance, "vkGetShaderBinaryDataEXT");
+	if (!vkGetShaderBinaryDataEXT) { print_msg("vkGetShaderBinaryDataEXT not loaded"); }
+	vkCmdBindShadersEXT = (PFN_vkCmdBindShadersEXT)load(vk_instance, "vkCmdBindShadersEXT");
+	if (!vkCmdBindShadersEXT) { print_msg("vkCmdBindShadersEXT not loaded"); }
 	vkGetFramebufferTilePropertiesQCOM = (PFN_vkGetFramebufferTilePropertiesQCOM)load(vk_instance, "vkGetFramebufferTilePropertiesQCOM");
 	if (!vkGetFramebufferTilePropertiesQCOM) { print_msg("vkGetFramebufferTilePropertiesQCOM not loaded"); }
 	vkGetDynamicRenderingTilePropertiesQCOM = (PFN_vkGetDynamicRenderingTilePropertiesQCOM)load(vk_instance, "vkGetDynamicRenderingTilePropertiesQCOM");
 	if (!vkGetDynamicRenderingTilePropertiesQCOM) { print_msg("vkGetDynamicRenderingTilePropertiesQCOM not loaded"); }
+	vkCmdSetAttachmentFeedbackLoopEnableEXT = (PFN_vkCmdSetAttachmentFeedbackLoopEnableEXT)load(vk_instance, "vkCmdSetAttachmentFeedbackLoopEnableEXT");
+	if (!vkCmdSetAttachmentFeedbackLoopEnableEXT) { print_msg("vkCmdSetAttachmentFeedbackLoopEnableEXT not loaded"); }
 	vkCreateAccelerationStructureKHR = (PFN_vkCreateAccelerationStructureKHR)load(vk_instance, "vkCreateAccelerationStructureKHR");
 	if (!vkCreateAccelerationStructureKHR) { print_msg("vkCreateAccelerationStructureKHR not loaded"); }
 	vkDestroyAccelerationStructureKHR = (PFN_vkDestroyAccelerationStructureKHR)load(vk_instance, "vkDestroyAccelerationStructureKHR");
